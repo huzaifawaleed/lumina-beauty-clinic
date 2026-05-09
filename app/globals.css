@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Light theme (default) ── */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f9fafb;
+  --color-border: #e5e7eb;
+  --color-primary: #e11d48;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+
+  --background: 0 0% 100%;
+  --foreground: 240 5% 10%;
+  --card: 0 0% 100%;
+  --card-foreground: 240 5% 10%;
+  --primary: 346 77% 49%;
+  --primary-foreground: 0 0% 100%;
+  --muted: 60 5% 96%;
+  --muted-foreground: 240 4% 46%;
+  --border: 240 6% 90%;
+  --ring: 346 77% 49%;
+}
+
+/* ── Dark theme ── */
+.dark {
+  --color-bg: #09090b;
+  --color-surface: #18181b;
+  --color-border: #27272a;
+  --color-text: #f4f4f5;
+  --color-muted: #a1a1aa;
+
+  --background: 240 5% 6%;
+  --foreground: 240 5% 96%;
+  --card: 240 4% 10%;
+  --card-foreground: 240 5% 96%;
+  --muted: 240 4% 16%;
+  --muted-foreground: 240 5% 64%;
+  --border: 240 4% 22%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+@layer base {
+  :root {
+    --gradient-color: #8350e8;
+    --sparkles-color: #8350e8;
+  }
+}
+
+/* Sparkle twinkle — used by CSSSparkles (no JS library) */
+@keyframes twinkle {
+  0%, 100% { opacity: var(--min-opacity, 0.05); }
+  50%       { opacity: var(--max-opacity, 0.7);  }
+}
+
+/* Stats section bottom fade — switches with theme */
+.stats-fade-bottom {
+  background: linear-gradient(to bottom, transparent, #ffffff);
+}
+.dark .stats-fade-bottom {
+  background: linear-gradient(to bottom, transparent, #09090b);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
