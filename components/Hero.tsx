@@ -75,7 +75,7 @@ export default function Hero() {
           variants={fadeUp(0.4)}
           initial="hidden"
           animate="show"
-          className="flex flex-col sm:flex-row gap-4 justify-center"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <GlowButton>
             <motion.a
